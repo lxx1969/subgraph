@@ -6,17 +6,21 @@ type Gravatar @entity {
 }
 
 type GetCash @entity {
+  id: ID!
   cash: BigInt!
 }
 
 type TotalBorrow @entity{
+  id: ID!
   borrow: BigInt!
 }
 
 type SupplyRatePerBlock @entity{
+  id: ID!
   rate: BigInt!
 }
 
 type BorrowRatePerBlock @entity{
+  id: ID!
   rate: BigInt!
 }
