@@ -34,8 +34,6 @@ import { GetCash,TotalBorrow,SupplyRatePerBlock,BorrowRatePerBlock } from '../ge
 export function handleTotalBorrowsCurrent(call: TotalBorrowsCurrentCall): void {
   let id = call.transaction.hash.toHex()
   let totalBorrow = new TotalBorrow(id)
-  import(call.outputValues[0])
-  call.outputValues[1]
-
+  totalBorrow.borrow = call.outputs.borrow
   totalBorrow.save()
 }

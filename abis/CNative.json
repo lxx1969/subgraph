@@ -392,7 +392,7 @@
       "name": "totalBorrowsCurrent",
       "outputs": [
         {
-          "name": "",
+          "name": "borrow",
           "type": "uint256"
         }
       ],
