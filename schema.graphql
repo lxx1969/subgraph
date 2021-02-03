@@ -4,3 +4,19 @@ type Gravatar @entity {
   displayName: String!
   imageUrl: String!
 }
+
+type GetCash @entity {
+  cash: BigInt!
+}
+
+type TotalBorrow @entity{
+  borrow: BigInt!
+}
+
+type SupplyRatePerBlock @entity{
+  rate: BigInt!
+}
+
+type BorrowRatePerBlock @entity{
+  rate: BigInt!
+}
