@@ -55,4 +55,4 @@ dataSources:
         - function: totalBorrowsCurrent()
           handler: handleTotalBorrowsCurrent
       file: ./src/tokenMapping.ts  
-  -kind:
+
