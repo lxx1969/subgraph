@@ -35,6 +35,6 @@ export function handleTotalBorrowsCurrent(call: TotalBorrowsCurrentCall): void {
   let id = call.transaction.hash.toHex()
   let totalBorrow = new TotalBorrow(id)
   console.log(call.outputValues)
-  totalBorrow.borrow = call.outputValues
+  totalBorrow.borrow = call.outputValues[0]
   totalBorrow.save()
 }
