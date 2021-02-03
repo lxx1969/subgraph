@@ -12,7 +12,7 @@ type GetCash @entity {
 
 type TotalBorrow @entity{
   id: ID!
-  borrow: BigInt!
+  borrow: !
 }
 
 type SupplyRatePerBlock @entity{
