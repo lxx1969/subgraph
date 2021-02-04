@@ -25,11 +25,12 @@ type BorrowRatePerBlock @entity{
   rate: BigInt!
 }
 
-type BorrowImpl @entity{
+type HtBorrowImpl @entity{
   id: ID!
-  decimals: Int
+  borrower: Bytes
   borrowAmount: BigInt
   accountBorrows: BigInt
   totalBorrows: BigInt
+
 }
 

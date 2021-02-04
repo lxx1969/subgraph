@@ -26,50 +26,6 @@ dataSources:
           handler: handleUpdatedGravatar
       file: Gravity/Gravity.wasm
   - kind: ethereum/contract
-    name: Dai
-    network: mainnet
-    source:
-      address: "0x8877c47dd190327e5880bFfE3F16B320Ed69d1B6"
-      abi: Dai
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.4
-      language: wasm/assemblyscript
-      entities:
-        - GetCash
-        - TotalBorrow
-        - SupplyRatePerBlock
-        - BorrowRatePerBlock
-      abis:
-        - name: Dai
-          file: Dai/abis/CErc20.json
-      eventHandlers:
-        - event: Borrow(address,uint256,uint256,uint256)
-          handler: handleBorrows
-      file: Dai/Dai.wasm
-  - kind: ethereum/contract
-    name: WHT
-    network: mainnet
-    source:
-      address: "0x175dCE4a23045Ef19b9593456b7CA2396CF09cbe"
-      abi: WHT
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.4
-      language: wasm/assemblyscript
-      entities:
-        - GetCash
-        - TotalBorrow
-        - SupplyRatePerBlock
-        - BorrowRatePerBlock
-      abis:
-        - name: WHT
-          file: WHT/abis/CErc20.json
-      eventHandlers:
-        - event: Borrow(address,uint256,uint256,uint256)
-          handler: handleBorrows
-      file: WHT/WHT.wasm
-  - kind: ethereum/contract
     name: HT
     network: mainnet
     source:
@@ -80,10 +36,7 @@ dataSources:
       apiVersion: 0.0.4
       language: wasm/assemblyscript
       entities:
-        - GetCash
-        - TotalBorrow
-        - SupplyRatePerBlock
-        - BorrowRatePerBlock
+        - HtBorrowImpl
       abis:
         - name: HT
           file: HT/abis/CErc20.json
