@@ -58,27 +58,27 @@ dataSources:
   #       # - function: totalBorrowsCurrent()
   #       #   handler: handleTotalBorrowsCurrent
   #     file: ./src/daiMapping.ts  
-  - kind: ethereum/contract
-    name: WHT
-    network: mainnet
-    source:
-      address: '0x175dCE4a23045Ef19b9593456b7CA2396CF09cbe'
-      abi: WHT
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.4
-      language: wasm/assemblyscript
-      entities:
-        - GetCash 
-        - TotalBorrow 
-        - SupplyRatePerBlock 
-        - BorrowRatePerBlock
-      abis:
-        - name: WHT
-          file: ./abis/CErc20.json
-      eventHandlers:
-        - event: Borrow(address,uint256,uint256,uint256)
-          handler: handleBorrows
+  # - kind: ethereum/contract
+  #   name: WHT
+  #   network: mainnet
+  #   source:
+  #     address: '0x175dCE4a23045Ef19b9593456b7CA2396CF09cbe'
+  #     abi: WHT
+  #   mapping:
+  #     kind: ethereum/events
+  #     apiVersion: 0.0.4
+  #     language: wasm/assemblyscript
+  #     entities:
+  #       - GetCash 
+  #       - TotalBorrow 
+  #       - SupplyRatePerBlock 
+  #       - BorrowRatePerBlock
+  #     abis:
+  #       - name: WHT
+  #         file: ./abis/CErc20.json
+  #     eventHandlers:
+  #       - event: Borrow(address,uint256,uint256,uint256)
+  #         handler: handleBorrows
       # callHandlers:
         # - function: getCash()
         #   handler: handleGetCash
@@ -90,7 +90,7 @@ dataSources:
         #   handler: handleBorrowRatePerBlock
         # - function: totalBorrowsCurrent()
         #   handler: handleTotalBorrowsCurrent
-      file: ./src/whtMapping.ts  
+      # file: ./src/whtMapping.ts  
   - kind: ethereum/contract
     name: HT
     network: mainnet
