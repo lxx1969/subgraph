@@ -230,7 +230,7 @@ export class BorrowRatePerBlock extends Entity {
   }
 }
 
-export class BorrowImpl extends Entity {
+export class HtBorrowImpl extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
@@ -238,17 +238,17 @@ export class BorrowImpl extends Entity {
 
   save(): void {
     let id = this.get("id");
-    assert(id !== null, "Cannot save BorrowImpl entity without an ID");
+    assert(id !== null, "Cannot save HtBorrowImpl entity without an ID");
     assert(
       id.kind == ValueKind.STRING,
-      "Cannot save BorrowImpl entity with non-string ID. " +
+      "Cannot save HtBorrowImpl entity with non-string ID. " +
         'Considering using .toHex() to convert the "id" to a string.'
     );
-    store.set("BorrowImpl", id.toString(), this);
+    store.set("HtBorrowImpl", id.toString(), this);
   }
 
-  static load(id: string): BorrowImpl | null {
-    return store.get("BorrowImpl", id) as BorrowImpl | null;
+  static load(id: string): HtBorrowImpl | null {
+    return store.get("HtBorrowImpl", id) as HtBorrowImpl | null;
   }
 
   get id(): string {
@@ -260,13 +260,21 @@ export class BorrowImpl extends Entity {
     this.set("id", Value.fromString(value));
   }
 
-  get decimals(): i32 {
-    let value = this.get("decimals");
-    return value.toI32();
+  get borrower(): Bytes | null {
+    let value = this.get("borrower");
+    if (value === null || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toBytes();
+    }
   }
 
-  set decimals(value: i32) {
-    this.set("decimals", Value.fromI32(value));
+  set borrower(value: Bytes | null) {
+    if (value === null) {
+      this.unset("borrower");
+    } else {
+      this.set("borrower", Value.fromBytes(value as Bytes));
+    }
   }
 
   get borrowAmount(): BigInt | null {
