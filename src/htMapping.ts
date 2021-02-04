@@ -13,12 +13,13 @@ export function handleBorrows(event: Borrow,call:InitializeCall,HT:HT): void {
   htBorrowImpl.borrower = event.params.borrower
   htBorrowImpl.accountBorrows = event.params.accountBorrows
   htBorrowImpl.borrowAmount = event.params.borrowAmount
-  htBorrowImpl.decimals = call.inputs.decimals_
+//   htBorrowImpl.decimals = call.inputs.decimals_
 
+  htBorrowImpl.decimals = HT.decimals
 //   htBorrowImpl.accountMint = HT.balanceOfUnderlying(htBorrowImpl.borrower)
-  htBorrowImpl.totalMint = HT.getCash()
-  htBorrowImpl.supplyRatePerBlock = HT.supplyRatePerBlock()
-  htBorrowImpl.borrowRatePerBlock = HT.borrowRatePerBlock()
+//   htBorrowImpl.totalMint = HT.getCash()
+//   htBorrowImpl.supplyRatePerBlock = HT.supplyRatePerBlock()
+//   htBorrowImpl.borrowRatePerBlock = HT.borrowRatePerBlock()
 
 
   htBorrowImpl.save()
