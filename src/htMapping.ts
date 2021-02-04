@@ -14,19 +14,17 @@ export function handleBorrows(event: Borrow,call:InitializeCall,HT:HT): void {
   htBorrowImpl.accountBorrows = event.params.accountBorrows
   htBorrowImpl.borrowAmount = event.params.borrowAmount
 //   htBorrowImpl.decimals = call.inputs.decimals_
-    log.info(HT)
-    console.log(HT)
-
+   
  
-  htBorrowImpl.decimals = HT.decimals()
+  htBorrowImpl.decimals = 18
 //   htBorrowImpl.accountMint = HT.balanceOfUnderlying(htBorrowImpl.borrower)
-//   htBorrowImpl.totalMint = HT.getCash()
+  htBorrowImpl.totalMint = HT.getCash()
 //   htBorrowImpl.supplyRatePerBlock = HT.supplyRatePerBlock()
 //   htBorrowImpl.borrowRatePerBlock = HT.borrowRatePerBlock()
 
 
   htBorrowImpl.save()
-
+  
 
 }
 
