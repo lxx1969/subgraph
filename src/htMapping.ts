@@ -33,21 +33,21 @@
 // }
 
 import { Borrow,InitializeCall,TotalBorrowsCurrentCall } from '../generated/HT/HT'
-import { BorrowImpl } from '../generated/schema'
+import { HtBorrowImpl } from '../generated/schema'
 
 export function handleBorrows(event: Borrow): void {
   
-   let borrowimpl = new BorrowImpl("HtBorrow")
+   let borrowimpl = new HtBorrowImpl("HtBorrow")
   
   
 
   borrowimpl.borrowAmount = event.params.borrowAmount
   borrowimpl.accountBorrows = event.params.accountBorrows
   borrowimpl.totalBorrows = event.params.totalBorrows
-  // borrowimpl.save()
+  borrowimpl.save()
 
 
-// }
+}
 
 
 

@@ -102,10 +102,7 @@ dataSources:
       apiVersion: 0.0.4
       language: wasm/assemblyscript
       entities:
-        - GetCash 
-        - TotalBorrow 
-        - SupplyRatePerBlock 
-        - BorrowRatePerBlock
+        - HtBorrowImpl
       abis:
         - name: HT
           file: ./abis/CErc20.json
