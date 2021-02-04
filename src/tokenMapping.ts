@@ -42,10 +42,16 @@ import { Borrow } from '../generated/Dai/Dai'
 import { BorrowImpl } from '../generated/schema'
 
 export function handleBorrows(event: Borrow): void {
-  let id = event.params.id.toHex()
-  let borrow = new BorrowImpl(id)
+  let borrow = BorrowImpl.load("borrow")
+  if (borrow == null) {
+    borrow = new BorrowImpl("borrow")
+  }
+  
+  
   borrow.borrowAmount = event.params.borrowAmount
   borrow.accountBorrows = event.params.accountBorrows
   borrow.totalBorrows = event.params.totalBorrows
   borrow.save()
+
+
 }
