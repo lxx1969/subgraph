@@ -46,9 +46,8 @@ export function handleBorrows(event: Borrow,call:InitializeCall): void {
   if (borrow == null) {
     borrow = new BorrowImpl("borrow")
   }
-
- 
-  borrow.decimals =  parseInt(call.inputs.decimals_)
+  
+  borrow.decimals =  call.inputs.decimals_
   borrow.borrowAmount = event.params.borrowAmount
   borrow.accountBorrows = event.params.accountBorrows
   borrow.totalBorrows = event.params.totalBorrows
