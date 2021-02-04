@@ -177,7 +177,7 @@
       "name": "getCash",
       "outputs": [
         {
-          "name": "",
+          "name": "cash",
           "type": "uint256"
         }
       ],
