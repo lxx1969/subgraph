@@ -260,6 +260,15 @@ export class BorrowImpl extends Entity {
     this.set("id", Value.fromString(value));
   }
 
+  get decimals(): i32 {
+    let value = this.get("decimals");
+    return value.toI32();
+  }
+
+  set decimals(value: i32) {
+    this.set("decimals", Value.fromI32(value));
+  }
+
   get borrowAmount(): BigInt | null {
     let value = this.get("borrowAmount");
     if (value === null || value.kind == ValueKind.NULL) {
