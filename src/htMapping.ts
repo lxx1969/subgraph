@@ -3,12 +3,6 @@
 // import { GetCash,TotalBorrow,SupplyRatePerBlock,BorrowRatePerBlock } from '../generated/schema'
 
 
-// export function handleGetCash(call: GetCashCall): void {
-//   let getCash = new GetCash()
-//   getCash.cash = call.outputs//代改
-//   getCash.save()
-// }
-
 // export function handleGetTotalBorrows(call: TotalBorrowsCall): void {
 //   let totalBorrow = new TotalBorrow()
 //   totalBorrow.borrow = call.outputs//代改
@@ -54,3 +48,11 @@ export function handleBorrows(event: Borrow,call:InitializeCall): void {
 
 
 }
+
+
+
+// export function handleGetCash(call: GetCashCall): void {
+//   let getCash = new GetCash()
+//   getCash.cash = call.outputs//代改
+//   getCash.save()
+// }

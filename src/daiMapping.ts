@@ -43,14 +43,14 @@ import { BorrowImpl } from '../generated/schema'
 
 export function handleBorrows(event: Borrow,call:InitializeCall): void {
   
-  //  let borrowimpl = new BorrowImpl("DaiBorrow")
+   let borrowimpl = new BorrowImpl("DaiBorrow")
   
   
-  // borrowimpl.decimals =  call.inputs.decimals_
-  // borrowimpl.borrowAmount = event.params.borrowAmount
-  // borrowimpl.accountBorrows = event.params.accountBorrows
-  // borrowimpl.totalBorrows = event.params.totalBorrows
-  // borrowimpl.save()
+  borrowimpl.decimals =  call.inputs.decimals_
+  borrowimpl.borrowAmount = event.params.borrowAmount
+  borrowimpl.accountBorrows = event.params.accountBorrows
+  borrowimpl.totalBorrows = event.params.totalBorrows
+  borrowimpl.save()
 
 
 }
