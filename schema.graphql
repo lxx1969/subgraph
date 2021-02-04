@@ -27,7 +27,7 @@ type BorrowRatePerBlock @entity{
 
 type HtBorrowImpl @entity{
   id: ID!
-  borrower: Address
+  borrower: Bytes
   borrowAmount: BigInt
   accountBorrows: BigInt
   totalBorrows: BigInt
