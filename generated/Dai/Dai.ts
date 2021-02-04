@@ -2063,7 +2063,7 @@ export class TotalBorrowsCurrentCall__Outputs {
     this._call = call;
   }
 
-  get borrow(): BigInt {
+  get value0(): BigInt {
     return this._call.outputValues[0].value.toBigInt();
   }
 }
