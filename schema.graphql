@@ -27,7 +27,6 @@ type BorrowRatePerBlock @entity{
 
 type BorrowImpl @entity{
   id: ID!
-  decimals: Int
   borrowAmount: BigInt
   accountBorrows: BigInt
   totalBorrows: BigInt
