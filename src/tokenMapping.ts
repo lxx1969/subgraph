@@ -42,12 +42,12 @@ import { Borrow,InitializeCall } from '../generated/Dai/Dai'
 import { BorrowImpl } from '../generated/schema'
 
 export function handleBorrows(event: Borrow,call:InitializeCall): void {
-  let borrow = BorrowImpl.load("borrow")
-  if (borrow == null) {
-    borrow = new BorrowImpl("borrow")
-  }
+  // let borrow = BorrowImpl.load("borrow")
+  // if (borrow == null) {
+   let borrow = new BorrowImpl("borrow")
+  // }
   
-  borrow.decimals =  call.inputs.decimals_
+  // borrow.decimals =  call.inputs.decimals_
   borrow.borrowAmount = event.params.borrowAmount
   borrow.accountBorrows = event.params.accountBorrows
   borrow.totalBorrows = event.params.totalBorrows
