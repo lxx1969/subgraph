@@ -112,9 +112,9 @@ dataSources:
       eventHandlers:
         - event: Borrow(address,uint256,uint256,uint256)
           handler: handleBorrows
-      callHandlers:
-        - function: getCash()
-          handler: handleGetCash
+      # callHandlers:
+        # - function: getCash()
+        #   handler: handleGetCash
         # - function: totalBorrows()
         #   handler: handleGetTotalBorrows
         # - function: supplyRatePerBlock()
