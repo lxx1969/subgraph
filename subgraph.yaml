@@ -43,12 +43,12 @@ dataSources:
       abis:
         - name: Dai
           file: ./abis/CErc20.json
-      eventHandlers:
-        - event: NewGravatar(uint256,address,string,string)
-          handler: handleNewGravatar
-        - event: UpdatedGravatar(uint256,address,string,string)
-          handler: handleUpdatedGravatar
-          # callHandlers:
+      # eventHandlers:
+      #   - event: NewGravatar(uint256,address,string,string)
+      #     handler: handleNewGravatar
+      #   - event: UpdatedGravatar(uint256,address,string,string)
+      #     handler: handleUpdatedGravatar
+      callHandlers:
         # - function: getCash()
         #   handler: handleGetCash
         # - function: totalBorrows()
