@@ -18,7 +18,7 @@ export function handleBorrows(event: Borrow,call:InitializeCall,HT:HT): void {
  
   htBorrowImpl.decimals = 18
 //   htBorrowImpl.accountMint = HT.balanceOfUnderlying(htBorrowImpl.borrower)
-  htBorrowImpl.totalMint = HT.getCash()
+//   htBorrowImpl.totalMint = HT.getCash()
 //   htBorrowImpl.supplyRatePerBlock = HT.supplyRatePerBlock()
 //   htBorrowImpl.borrowRatePerBlock = HT.borrowRatePerBlock()
 
