@@ -76,9 +76,8 @@ dataSources:
       eventHandlers:
         - event: Borrow(address,uint256,uint256,uint256)
           handler: handleBorrows
-      callHandlers:
-        - function: getCash()
-          handler: handleGetCash
+        - event: Mint(address,uint256,uint256,uint256)
+          handler: handleMint    
         # - function: totalBorrows()
         #   handler: handleGetTotalBorrows
         # - function: supplyRatePerBlock()
