@@ -27,13 +27,24 @@
 //   borrowRatePerBlock.save()
 // }
 
-import {TotalBorrowsCurrentCall} from '../generated/Dai/Dai'
-import { GetCash,TotalBorrow,SupplyRatePerBlock,BorrowRatePerBlock } from '../generated/schema'
+// import {TotalBorrowsCurrentCall} from '../generated/Dai/Dai'
+// import { GetCash,TotalBorrow,SupplyRatePerBlock,BorrowRatePerBlock } from '../generated/schema'
 
 
-export function handleTotalBorrowsCurrent(call: TotalBorrowsCurrentCall): void {
-  // let id = call.transaction.hash.toHex()
-  // let totalBorrow = new TotalBorrow(id)
+// export function handleTotalBorrowsCurrent(call: TotalBorrowsCurrentCall): void {
+//   // let id = call.transaction.hash.toHex()
+//   // let totalBorrow = new TotalBorrow(id)
  
-  // totalBorrow.save()
+//   // totalBorrow.save()
+// }
+
+import { Borrow } from '../generated/Dai/Dai'
+import { BorrowImpl } from '../generated/schema'
+
+export function handleBorrows(event: Borrow): void {
+  // let borrow = new BorrowImpl(event.params.id.toHex())
+  // borrow.borrowAmount = event.params.borrowAmount
+  // borrow.accountBorrows = event.params.accountBorrows
+  // borrow.totalBorrows = event.params.totalBorrows
+  // borrow.save()
 }

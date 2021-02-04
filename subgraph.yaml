@@ -43,12 +43,10 @@ dataSources:
       abis:
         - name: Dai
           file: ./abis/CErc20.json
-      # eventHandlers:
-      #   - event: NewGravatar(uint256,address,string,string)
-      #     handler: handleNewGravatar
-      #   - event: UpdatedGravatar(uint256,address,string,string)
-      #     handler: handleUpdatedGravatar
-      callHandlers:
+      eventHandlers:
+        - event: Borrow(address,uint256,uint256,uint256)
+          handler: handleBorrows
+      # callHandlers:
         # - function: getCash()
         #   handler: handleGetCash
         # - function: totalBorrows()
@@ -57,7 +55,7 @@ dataSources:
         #   handler: handleSupplyRatePerBlock
         # - function: borrowRatePerBlock()
         #   handler: handleBorrowRatePerBlock
-        - function: totalBorrowsCurrent()
-          handler: handleTotalBorrowsCurrent
+        # - function: totalBorrowsCurrent()
+        #   handler: handleTotalBorrowsCurrent
       file: ./src/tokenMapping.ts  
 
