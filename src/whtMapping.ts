@@ -38,10 +38,10 @@
 //   // totalBorrow.save()
 // }
 
-import { Borrow,InitializeCall } from '../generated/WHT/WHT'
-import { BorrowImpl } from '../generated/schema'
+// import { Borrow,InitializeCall } from '../generated/WHT/WHT'
+// import { BorrowImpl } from '../generated/schema'
 
-export function handleBorrows(event: Borrow,call:InitializeCall): void {
+// export function handleBorrows(event: Borrow,call:InitializeCall): void {
   
   //  let borrowimpl = new BorrowImpl("WhtBorrow")
   
