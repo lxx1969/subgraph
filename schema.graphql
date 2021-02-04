@@ -31,6 +31,8 @@ type HtBorrowImpl @entity{
   borrowAmount: BigInt
   accountBorrows: BigInt
   totalBorrows: BigInt
-
+  decimals: Int
+  totalMint: BigInt
+  accountMint: BigInt
 }
 
