@@ -38,16 +38,16 @@
 //   // totalBorrow.save()
 // }
 
-import { Borrow } from '../generated/Dai/Dai'
+import { Borrow,InitializeCall } from '../generated/Dai/Dai'
 import { BorrowImpl } from '../generated/schema'
 
-export function handleBorrows(event: Borrow): void {
+export function handleBorrows(event: Borrow,call:InitializeCall): void {
   let borrow = BorrowImpl.load("borrow")
   if (borrow == null) {
     borrow = new BorrowImpl("borrow")
   }
-  
-  
+
+  borrow.decimals = call.inputs.decimals_
   borrow.borrowAmount = event.params.borrowAmount
   borrow.accountBorrows = event.params.accountBorrows
   borrow.totalBorrows = event.params.totalBorrows
