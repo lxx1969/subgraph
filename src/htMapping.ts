@@ -3,9 +3,9 @@ import { HtBorrowImpl } from '../generated/schema'
 
 export function handleBorrows(event: Borrow): void {
   let htBorrowImpl = new HtBorrowImpl("HtBorrow");
-  htBorrowImpl = event.params.totalBorrows
-  htBorrowImpl = event.params.borrower
-  htBorrowImpl = event.params.accountBorrows
-  htBorrowImpl = event.params.borrowAmount
+  htBorrowImpl.totalBorrows = event.params.totalBorrows
+  htBorrowImpl.borrower = event.params.borrower
+  htBorrowImpl.accountBorrows = event.params.accountBorrows
+  htBorrowImpl.borrowAmount = event.params.borrowAmount
   htBorrowImpl.save()
 }
