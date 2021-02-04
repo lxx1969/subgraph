@@ -229,3 +229,85 @@ export class BorrowRatePerBlock extends Entity {
     this.set("rate", Value.fromBigInt(value));
   }
 }
+
+export class BorrowImpl extends Entity {
+  constructor(id: string) {
+    super();
+    this.set("id", Value.fromString(id));
+  }
+
+  save(): void {
+    let id = this.get("id");
+    assert(id !== null, "Cannot save BorrowImpl entity without an ID");
+    assert(
+      id.kind == ValueKind.STRING,
+      "Cannot save BorrowImpl entity with non-string ID. " +
+        'Considering using .toHex() to convert the "id" to a string.'
+    );
+    store.set("BorrowImpl", id.toString(), this);
+  }
+
+  static load(id: string): BorrowImpl | null {
+    return store.get("BorrowImpl", id) as BorrowImpl | null;
+  }
+
+  get id(): string {
+    let value = this.get("id");
+    return value.toString();
+  }
+
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
+  }
+
+  get borrowAmount(): BigInt | null {
+    let value = this.get("borrowAmount");
+    if (value === null || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set borrowAmount(value: BigInt | null) {
+    if (value === null) {
+      this.unset("borrowAmount");
+    } else {
+      this.set("borrowAmount", Value.fromBigInt(value as BigInt));
+    }
+  }
+
+  get accountBorrows(): BigInt | null {
+    let value = this.get("accountBorrows");
+    if (value === null || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set accountBorrows(value: BigInt | null) {
+    if (value === null) {
+      this.unset("accountBorrows");
+    } else {
+      this.set("accountBorrows", Value.fromBigInt(value as BigInt));
+    }
+  }
+
+  get totalBorrows(): BigInt | null {
+    let value = this.get("totalBorrows");
+    if (value === null || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set totalBorrows(value: BigInt | null) {
+    if (value === null) {
+      this.unset("totalBorrows");
+    } else {
+      this.set("totalBorrows", Value.fromBigInt(value as BigInt));
+    }
+  }
+}

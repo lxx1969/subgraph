@@ -43,7 +43,7 @@ dataSources:
       abis:
         - name: Dai
           file: Dai/abis/CErc20.json
-      callHandlers:
-        - function: totalBorrowsCurrent()
-          handler: handleTotalBorrowsCurrent
+      eventHandlers:
+        - event: Borrow(address,uint256,uint256,uint256)
+          handler: handleBorrows
       file: Dai/Dai.wasm

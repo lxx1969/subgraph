@@ -24,3 +24,11 @@ type BorrowRatePerBlock @entity{
   id: ID!
   rate: BigInt!
 }
+
+type BorrowImpl @entity{
+  id: ID!
+  borrowAmount: BigInt
+  accountBorrows: BigInt
+  totalBorrows: BigInt
+}
+
