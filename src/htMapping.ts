@@ -55,4 +55,4 @@ export function handleBorrows(event: Borrow): void {
 //   let getCash = new GetCash()
 //   getCash.cash = call.outputs//代改
 //   getCash.save()
-// }
+}
