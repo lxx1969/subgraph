@@ -15,7 +15,7 @@ export function handleBorrows(event: Borrow,call:InitializeCall,HT:HT): void {
   htBorrowImpl.borrowAmount = event.params.borrowAmount
 //   htBorrowImpl.decimals = call.inputs.decimals_
 
-  htBorrowImpl.decimals = HT.decimals
+  htBorrowImpl.decimals = HT.decimals()
 //   htBorrowImpl.accountMint = HT.balanceOfUnderlying(htBorrowImpl.borrower)
 //   htBorrowImpl.totalMint = HT.getCash()
 //   htBorrowImpl.supplyRatePerBlock = HT.supplyRatePerBlock()
