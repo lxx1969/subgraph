@@ -44,7 +44,7 @@ export function handleBorrows(event: Borrow): void {
   borrowimpl.borrowAmount = event.params.borrowAmount
   borrowimpl.accountBorrows = event.params.accountBorrows
   borrowimpl.totalBorrows = event.params.totalBorrows
-  borrowimpl.save()
+  // borrowimpl.save()
 
 
 // }
