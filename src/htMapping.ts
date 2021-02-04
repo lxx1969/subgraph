@@ -32,26 +32,26 @@
 //   // totalBorrow.save()
 // }
 
-import { Borrow,InitializeCall } from '../generated/HT/HT'
+import { Borrow,InitializeCall,TotalBorrowsCurrentCall } from '../generated/HT/HT'
 import { BorrowImpl } from '../generated/schema'
 
-export function handleBorrows(event: Borrow,call:InitializeCall): void {
+export function handleBorrows(event: Borrow): void {
   
    let borrowimpl = new BorrowImpl("HtBorrow")
   
   
-  borrowimpl.decimals =  call.inputs.decimals_
+
   borrowimpl.borrowAmount = event.params.borrowAmount
   borrowimpl.accountBorrows = event.params.accountBorrows
   borrowimpl.totalBorrows = event.params.totalBorrows
   borrowimpl.save()
 
 
-}
+// }
 
 
 
-// export function handleGetCash(call: GetCashCall): void {
+// export function handleTotalBorrowsCurrentCall(call: TotalBorrowsCurrentCall): void {
 //   let getCash = new GetCash()
 //   getCash.cash = call.outputs//代改
 //   getCash.save()
