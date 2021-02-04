@@ -47,3 +47,47 @@ dataSources:
         - event: Borrow(address,uint256,uint256,uint256)
           handler: handleBorrows
       file: Dai/Dai.wasm
+  - kind: ethereum/contract
+    name: WHT
+    network: mainnet
+    source:
+      address: "0x175dCE4a23045Ef19b9593456b7CA2396CF09cbe"
+      abi: WHT
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - GetCash
+        - TotalBorrow
+        - SupplyRatePerBlock
+        - BorrowRatePerBlock
+      abis:
+        - name: WHT
+          file: WHT/abis/CErc20.json
+      eventHandlers:
+        - event: Borrow(address,uint256,uint256,uint256)
+          handler: handleBorrows
+      file: WHT/WHT.wasm
+  - kind: ethereum/contract
+    name: HT
+    network: mainnet
+    source:
+      address: "0xddc822c72e6CC10Af98De2D53cC04dAeb4a5336e"
+      abi: HT
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - GetCash
+        - TotalBorrow
+        - SupplyRatePerBlock
+        - BorrowRatePerBlock
+      abis:
+        - name: HT
+          file: HT/abis/CErc20.json
+      eventHandlers:
+        - event: Borrow(address,uint256,uint256,uint256)
+          handler: handleBorrows
+      file: HT/HT.wasm
