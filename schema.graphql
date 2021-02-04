@@ -33,6 +33,7 @@ type HtBorrowImpl @entity{
   totalBorrows: BigInt
   decimals: Int
   totalMint: BigInt
+  supplyRatePerBlock: BigInt
   accountMint: BigInt
+  borrowRatePerBlock: BigInt
 }
-
