@@ -26,7 +26,7 @@ type BorrowRatePerBlock @entity{
 }
 
 type BorrowImpl @entity{
-  id：ID！
+  id: ID!
   borrowAmount: BigInt
   accountBorrows: BigInt
   totalBorrows: BigInt
