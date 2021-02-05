@@ -10,7 +10,6 @@ export function handleBorrows(event: Borrow): void {
   htBorrowImpl.borrower = event.params.borrower
   htBorrowImpl.accountBorrows = event.params.accountBorrows
   htBorrowImpl.borrowAmount = event.params.borrowAmount
-  log.info('event',[event.toString()])
   log.info('htBorrowImpl is htBorrowImpl.accountBorrows',[htBorrowImpl.accountBorrows.toString()])
   log.info('htBorrowImpl is htBorrowImpl.borrower',[htBorrowImpl.borrower.toString()])
   log.info('htBorowImpl is htBorrowImpl.borrowAmount',[htBorrowImpl.borrowAmount.toString()])
