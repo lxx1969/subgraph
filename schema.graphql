@@ -58,8 +58,8 @@ type HtRepayBorrowImpl @entity{
 
   payer: Bytes
   borrower: Bytes
-  repayAmount：BigInt
-  accountBorrows： BigInt
+  repayAmount: BigInt
+  accountBorrows: BigInt
   totalBorrows: BigInt
         }
 
