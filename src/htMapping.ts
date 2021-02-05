@@ -43,7 +43,7 @@ let address = Address.fromString('0xddc822c72e6CC10Af98De2D53cC04dAeb4a5336e')
   let decimals = BigInt.fromI32(callResult.value)
   log.info('HTimpl decimals is',[decimals.toString()]);
 
-
+   htMintImpl.decimals = decimals
 htMintImpl.save()
 }
 }
