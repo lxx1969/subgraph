@@ -70,6 +70,7 @@ dataSources:
       language: wasm/assemblyscript
       entities:
         - HtBorrowImpl
+        - HtMintImpl
       abis:
         - name: HT
           file: ./abis/CErc20.json

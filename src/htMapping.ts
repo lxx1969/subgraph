@@ -4,11 +4,11 @@ import { HtBorrowImpl} from '../generated/schema'
 export function handleBorrows(event: Borrow,call:InitializeCall,HT:HT): void {
     
 
-    let htBorrowImpl   = HtBorrowImpl.load("HtBorrow")
-    if(htBorrowImpl == null){
- htBorrowImpl = new HtBorrowImpl("HtBorrow");
+    // let htBorrowImpl   = HtBorrowImpl.load("HtBorrow")
+    // if(htBorrowImpl == null){
+ let htBorrowImpl = new HtBorrowImpl("HtBorrow");
   
-    }
+    // }
     htBorrowImpl.totalBorrows = event.params.totalBorrows
   htBorrowImpl.borrower = event.params.borrower
   htBorrowImpl.accountBorrows = event.params.accountBorrows
@@ -16,7 +16,7 @@ export function handleBorrows(event: Borrow,call:InitializeCall,HT:HT): void {
 //   htBorrowImpl.decimals = call.inputs.decimals_
    
  
-  htBorrowImpl.decimals = 18
+//   htBorrowImpl.decimals = 18
 //   htBorrowImpl.accountMint = HT.balanceOfUnderlying(htBorrowImpl.borrower)
 //   htBorrowImpl.totalMint = HT.getCash()
 //   htBorrowImpl.supplyRatePerBlock = HT.supplyRatePerBlock()
