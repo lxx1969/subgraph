@@ -32,11 +32,16 @@ htMintImpl.totalMint = event.params.mintTokens
 let address = Address.fromString('0xddc822c72e6CC10Af98De2D53cC04dAeb4a5336e')
   let Ht = HT.bind(address)
 
-  let decimals = BigInt.fromI32(Ht.try_decimals())
+  let callResult = Ht.try_decimals()
+  if (callResult.reverted) {
+    log.info("getGravatar reverted", [])
+  } else {
+  let decimals = BigInt.fromI32(callResult.value)
   log.info('HTimpl decimals is',[decimals.toString()]);
 
 
 htMintImpl.save()
+}
 }
 
 
