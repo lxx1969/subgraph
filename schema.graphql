@@ -31,22 +31,43 @@ type HtBorrowImpl @entity{
   borrowAmount: BigInt
   accountBorrows: BigInt
   totalBorrows: BigInt
-  decimals: BigInt
-  totalMint: BigInt
-  supplyRatePerBlock: BigInt
-  accountMint: BigInt
-  borrowRatePerBlock: BigInt
+
 }
 
 type HtMintImpl @entity{
   id: ID!
-  borrower: Bytes
-  borrowAmount: BigInt
-  accountBorrows: BigInt
-  totalBorrows: BigInt
-  decimals: BigInt
+  
   totalMint: BigInt
-  supplyRatePerBlock: BigInt
-  accountMint: BigInt
-  borrowRatePerBlock: BigInt
+  minter: Bytes
+  mintAmount: BigInt
+  
+}
+
+type HtRepayBorrowImpl @entity{
+  id: ID!
+  
+  totalMint: BigInt
+  minter: Bytes
+  mintAmount: BigInt
+  
+}
+
+
+type HtRepayBorrowImpl @entity{
+  id: ID!
+
+  payer: Bytes
+  borrower: Bytes
+  repayAmount：BigInt
+  accountBorrows： BigInt
+  totalBorrows: BigInt
+        }
+
+
+type HtRedeemImpl @entity{
+  id: ID!
+  
+  redeemer: address
+  redeemAmount: BigInt
+  redeemTokens: BigInt
 }

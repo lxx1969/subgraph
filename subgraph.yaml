@@ -83,6 +83,10 @@ dataSources:
           handler: handleBorrows
         - event: Mint(address,uint256,uint256)
           handler: handleMint    
+        - event: RepayBorrow(address,address,uint256,uint256,uint256)
+          handler: handleRepayBorrow
+        - event: Redeem(address,uint256,uint256)
+          handler: handleRedeem     
       # callhandlers:
       #   - function: supplyRatePerBlock()
       #     handler: handleRate   

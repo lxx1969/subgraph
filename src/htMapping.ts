@@ -1,6 +1,6 @@
-import { Borrow,InitializeCall,HT,Mint} from '../generated/HT/HT'
+import { Redeem,RepayBorrow,Borrow,InitializeCall,HT,Mint} from '../generated/HT/HT'
 // import { ERC20} from '../generated/HT/HT'
-import { HtBorrowImpl,HtMintImpl} from '../generated/schema'
+import { HtBorrowImpl,HtMintImpl,HtRepayBorrowImpl,HtRedeemImpl} from '../generated/schema'
 import{log,BigInt,Address} from '@graphprotocol/graph-ts'
 export function handleBorrows(event: Borrow): void {
     
@@ -27,24 +27,47 @@ export function handleBorrows(event: Borrow): void {
 export function handleMint(event: Mint): void {
     
 let htMintImpl = new HtMintImpl("HtMint")
-htMintImpl.accountMint = event.params.mintAmount
+htMintImpl.mintAmount = event.params.mintAmount
 htMintImpl.totalMint = event.params.mintTokens
+htMintImpl.minter = event.params.minter
 
+// let address = Address.fromString('0xddc822c72e6CC10Af98De2D53cC04dAeb4a5336e')
 
-let address = Address.fromString('0xddc822c72e6CC10Af98De2D53cC04dAeb4a5336e')
+//   let Ht = HT.bind(address)
+//   log.info('Ht bind info--------------------------------',[ Ht.getCash().toString()]);
 
-  let Ht = HT.bind(address)
-  log.info('Ht bind info--------------------------------',[ Ht.getCash().toString()]);
+//   let callResult = Ht.try_decimals()
+//   if (callResult.reverted) {
+//     log.info("getGravatar reverted", [])
+//   } else {
+//   let decimals = BigInt.fromI32(callResult.value)
+//   log.info('HTimpl decimals is',[decimals.toString()]);
 
-  let callResult = Ht.try_decimals()
-  if (callResult.reverted) {
-    log.info("getGravatar reverted", [])
-  } else {
-  let decimals = BigInt.fromI32(callResult.value)
-  log.info('HTimpl decimals is',[decimals.toString()]);
-
-   htMintImpl.decimals = decimals
+   
 htMintImpl.save()
 }
+
+export function handleRepayBorrow(event: RepayBorrow):void{
+
+let htRepayBorrowImpl = new HtRepayBorrowImpl("HtRepayBorrow");
+
+htRepayBorrowImpl.payer = event.params.payer
+htRepayBorrowImpl.borrower = event.params.borrower
+htRepayBorrowImpl.repayAmount = event.params.repayAmount
+htRepayBorrowImpl.accountBorrows = event.params.accountBorrows
+htRepayBorrowImpl.totalBorrows = event.params.totalBorrows
+
+htRepayBorrowImpl.save()
+
 }
 
+export function handleRedeem(event: Redeem):void{
+
+    let htRedeemImpl = new HtRedeemImpl("HtRedeem")
+    
+    htRedeemImpl.redeemer = event.params.redeemer
+    htRedeemImpl.redeemAmount = event.params.redeemAmount
+    htRedeemImpl.redeemTokens = event.params.redeemTokens
+  
+    htRedeemImpl.save()
+}
