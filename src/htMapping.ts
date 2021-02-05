@@ -1,4 +1,5 @@
 import { Borrow,InitializeCall,HT,Mint} from '../generated/HT/HT'
+// import { ERC20} from '../generated/HT/HT'
 import { HtBorrowImpl,HtMintImpl} from '../generated/schema'
 import{log,BigInt,Address} from '@graphprotocol/graph-ts'
 export function handleBorrows(event: Borrow): void {
@@ -29,7 +30,11 @@ let htMintImpl = new HtMintImpl("HtMint")
 htMintImpl.accountMint = event.params.mintAmount
 htMintImpl.totalMint = event.params.mintTokens
 
-  let Ht = HT.bind(event.address)
+
+let address = Address.fromString('0xddc822c72e6CC10Af98De2D53cC04dAeb4a5336e')
+
+  let Ht = HT.bind(address)
+  log.info('Ht bind info--------------------------------',[ Ht.getCash().toString()]);
 
   let callResult = Ht.try_decimals()
   if (callResult.reverted) {
@@ -42,6 +47,4 @@ htMintImpl.totalMint = event.params.mintTokens
 htMintImpl.save()
 }
 }
-
-
 
