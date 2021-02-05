@@ -44,7 +44,7 @@ type HtMintImpl @entity{
   borrowAmount: BigInt
   accountBorrows: BigInt
   totalBorrows: BigInt
-  decimals: Int
+  decimals: BigInt
   totalMint: BigInt
   supplyRatePerBlock: BigInt
   accountMint: BigInt
