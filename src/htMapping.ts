@@ -11,7 +11,7 @@ export function handleBorrows(event: Borrow): void {
   htBorrowImpl.accountBorrows = event.params.accountBorrows
   htBorrowImpl.borrowAmount = event.params.borrowAmount
   log.info('htBorrowImpl is htBorrowImpl.accountBorrows',[htBorrowImpl.accountBorrows.toString()])
-  log.info('htBorrowImpl is htBorrowImpl.borrower',[htBorrowImpl.borrower.toString()])
+  log.info('htBorrowImpl is htBorrowImpl.borrower',[htBorrowImpl.borrower.toHexString()])
   log.info('htBorowImpl is htBorrowImpl.borrowAmount',[htBorrowImpl.borrowAmount.toString()])
   log.info('htBorrowImpl is  htBorrowImpl.totalBorrows',[ htBorrowImpl.totalBorrows.toString()]);
   
@@ -33,7 +33,7 @@ let htMintImpl = new HtMintImpl("HtMint")
 htMintImpl.accountMint = event.params.mintAmount
 htMintImpl.totalMint = event.params.mintTokens
 
-
+htMintImpl.save()
 }
 
 
