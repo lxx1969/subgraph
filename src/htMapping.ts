@@ -29,11 +29,11 @@ let htMintImpl = new HtMintImpl("HtMint")
 htMintImpl.accountMint = event.params.mintAmount
 htMintImpl.totalMint = event.params.mintTokens
 
-// let address = Address.fromString('0xddc822c72e6CC10Af98De2D53cC04dAeb4a5336e')
-//   let Ht = HT.bind(address)
+let address = Address.fromString('0xddc822c72e6CC10Af98De2D53cC04dAeb4a5336e')
+  let Ht = HT.bind(address)
 
-//   let decimals = BigInt.fromI32(Ht.decimals())
-//   log.info('HTimpl decimals is',[decimals.toString()]);
+  let decimals = BigInt.fromI32(Ht.try_decimals())
+  log.info('HTimpl decimals is',[decimals.toString()]);
 
 
 htMintImpl.save()
