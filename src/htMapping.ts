@@ -10,9 +10,11 @@ export function handleBorrows(event: Borrow): void {
   htBorrowImpl.borrower = event.params.borrower
   htBorrowImpl.accountBorrows = event.params.accountBorrows
   htBorrowImpl.borrowAmount = event.params.borrowAmount
-  let array = [htBorrowImpl.accountBorrows,htBorrowImpl.borrower,htBorrowImpl.accountBorrows,htBorrowImpl.totalBorrows]
-  log.info('htBorrowImpl is htBorrowImpl.accountBorrows,htBorrowImpl.borrower,htBorrowImpl.accountBorrows,htBorrowImpl.totalBorrows',[array[0],array[1],array[2],array[3]])
-
+  log.info('htBorrowImpl is htBorrowImpl.accountBorrows',[htBorrowImpl.accountBorrows])
+  log.info('htBorrowImpl is htBorrowImpl.borrower',[htBorrowImpl.borrower])
+  log.info('htBorowImpl is htBorrowImpl.borrowAmount',[htBorrowImpl.borrowAmount])
+  log.info('htBorrowImpl is  htBorrowImpl.totalBorrows',[ htBorrowImpl.totalBorrows]);
+  
   let address = Address.fromString('0xddc822c72e6CC10Af98De2D53cC04dAeb4a5336e')
   let Ht = HT.bind(address)
 
@@ -31,8 +33,7 @@ let htMintImpl = new HtMintImpl("HtMint")
 htMintImpl.accountMint = event.params.mintAmount
 htMintImpl.totalMint = event.params.mintTokens
 
-let Ht = HT.bind(0xddc822c72e6CC10Af98De2D53cC04dAeb4a5336e)
-Ht.decimals()
+
 }
 
 
