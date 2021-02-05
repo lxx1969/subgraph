@@ -10,6 +10,7 @@ dataSources:
     source:
       address: '0x2E645469f354BB4F5c8a05B3b30A929361cf77eC'
       abi: Gravity
+      startBlock: 16833263
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -58,33 +59,34 @@ dataSources:
   #       - function: totalBorrowsCurrent()
   #         handler: handleTotalBorrowsCurrent
   #     file: ./src/whtMapping.ts  
-  # - kind: ethereum/contract
-  #   name: HT
-  #   network: mainnet
-  #   source:
-  #     address: '0xddc822c72e6CC10Af98De2D53cC04dAeb4a5336e'
-  #     abi: HT
-  #   mapping:
-  #     kind: ethereum/events
-  #     apiVersion: 0.0.4
-  #     language: wasm/assemblyscript
-  #     entities:
-  #       - HtBorrowImpl
-  #       - HtMintImpl
-  #     abis:
-  #       - name: HT
-  #         file: ./abis/CErc20.json
-  #     eventHandlers:
-  #       - event: Borrow(address,uint256,uint256,uint256)
-  #         handler: handleBorrows
-  #       - event: Mint(address,uint256,uint256)
-  #         handler: handleMint    
-  #       # - function: totalBorrows()
-  #       #   handler: handleGetTotalBorrows
-  #       # - function: supplyRatePerBlock()
-  #       #   handler: handleSupplyRatePerBlock
-  #       # - function: borrowRatePerBlock()
-  #       #   handler: handleBorrowRatePerBlock
-  #       # - function: totalBorrowsCurrent()
-  #       #   handler: handleTotalBorrowsCurrent
-  #     file: ./src/htMapping.ts  
+  - kind: ethereum/contract
+    name: HT
+    network: mainnet
+    source:
+      address: '0xddc822c72e6CC10Af98De2D53cC04dAeb4a5336e'
+      abi: HT
+      startBlock: 16833263
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - HtBorrowImpl
+        - HtMintImpl
+      abis:
+        - name: HT
+          file: ./abis/CErc20.json
+      eventHandlers:
+        - event: Borrow(address,uint256,uint256,uint256)
+          handler: handleBorrows
+        - event: Mint(address,uint256,uint256)
+          handler: handleMint    
+        # - function: totalBorrows()
+        #   handler: handleGetTotalBorrows
+        # - function: supplyRatePerBlock()
+        #   handler: handleSupplyRatePerBlock
+        # - function: borrowRatePerBlock()
+        #   handler: handleBorrowRatePerBlock
+        # - function: totalBorrowsCurrent()
+        #   handler: handleTotalBorrowsCurrent
+      file: ./src/htMapping.ts  
