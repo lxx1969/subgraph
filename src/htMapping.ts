@@ -15,11 +15,7 @@ export function handleBorrows(event: Borrow): void {
   log.info('htBorowImpl is htBorrowImpl.borrowAmount',[htBorrowImpl.borrowAmount.toString()])
   log.info('htBorrowImpl is  htBorrowImpl.totalBorrows',[ htBorrowImpl.totalBorrows.toString()]);
   
-  let address = Address.fromString('0xddc822c72e6CC10Af98De2D53cC04dAeb4a5336e')
-  let Ht = HT.bind(address)
-
-  let decimals = BigInt.fromI32(Ht.decimals())
-  log.info('HTimpl decimals is',[decimals.toString()]);
+  
   
   htBorrowImpl.save()
   
@@ -32,6 +28,13 @@ export function handleMint(event: Mint): void {
 let htMintImpl = new HtMintImpl("HtMint")
 htMintImpl.accountMint = event.params.mintAmount
 htMintImpl.totalMint = event.params.mintTokens
+
+let address = Address.fromString('0xddc822c72e6CC10Af98De2D53cC04dAeb4a5336e')
+  let Ht = HT.bind(address)
+
+  let decimals = BigInt.fromI32(Ht.decimals())
+  log.info('HTimpl decimals is',[decimals.toString()]);
+
 
 htMintImpl.save()
 }
