@@ -1,6 +1,6 @@
-import { Redeem,RepayBorrow,Borrow,InitializeCall,HT,Mint} from '../generated/HT/HT'
+import { BalanceOfUnderlyingCall,BorrowBalanceCurrentCall,Redeem,RepayBorrow,Borrow,HT,Mint} from '../generated/HT/HT'
 // import { ERC20} from '../generated/HT/HT'
-import { HtBorrowImpl,HtMintImpl,HtRepayBorrowImpl,HtRedeemImpl} from '../generated/schema'
+import { HtBorrowImpl,HtMintImpl,HtRepayBorrowImpl,HtRedeemImpl,HtBalanceOfUnderlying,HtBorrowBalanceCurrent} from '../generated/schema'
 import{log,BigInt,Address} from '@graphprotocol/graph-ts'
 export function handleBorrows(event: Borrow): void {
     
@@ -70,4 +70,19 @@ export function handleRedeem(event: Redeem):void{
     htRedeemImpl.redeemTokens = event.params.redeemTokens
   
     htRedeemImpl.save()
+}
+
+export function handleBalanceOfUnderlying(call: BalanceOfUnderlyingCall):void{
+  let htBalanceOfUnderlying = new HtBalanceOfUnderlying("HtBalanceOfUnderlying")
+  
+  htBalanceOfUnderlying.underlying = call.outputs.value0
+  
+  htBalanceOfUnderlying.save()
+}
+export function handleBorrowBalanceCurrent(call: BorrowBalanceCurrentCall):void{
+  let htBorrowBalanceCurrent = new HtBorrowBalanceCurrent("HtBorrowBalanceCurren")
+
+  htBorrowBalanceCurrent = call.outputs.value0
+
+  htBorrowBalanceCurrent.save()
 }

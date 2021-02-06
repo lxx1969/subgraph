@@ -80,5 +80,5 @@ underlying: BigInt
 type HtBorrowBalanceCurrent @entity{
 id: ID!
 
-Balance: ID!
+balance: ID!
 }
