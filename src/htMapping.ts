@@ -72,17 +72,17 @@ export function handleRedeem(event: Redeem):void{
     htRedeemImpl.save()
 }
 
-export function handleBalanceOfUnderlying(call: BalanceOfUnderlyingCall):void{
-  let htBalanceOfUnderlying = new HtBalanceOfUnderlying("HtBalanceOfUnderlying")
+// export function handleBalanceOfUnderlying(call: BalanceOfUnderlyingCall):void{
+//   let htBalanceOfUnderlying = new HtBalanceOfUnderlying("HtBalanceOfUnderlying")
   
-  htBalanceOfUnderlying.underlying = call.outputs.value0
+//   htBalanceOfUnderlying.underlying = call.outputs.value0
   
-  htBalanceOfUnderlying.save()
-}
-export function handleBorrowBalanceCurrent(call: BorrowBalanceCurrentCall):void{
-  let htBorrowBalanceCurrent = new HtBorrowBalanceCurrent("HtBorrowBalanceCurren")
+//   htBalanceOfUnderlying.save()
+// }
+// export function handleBorrowBalanceCurrent(call: BorrowBalanceCurrentCall):void{
+//   let htBorrowBalanceCurrent = new HtBorrowBalanceCurrent("HtBorrowBalanceCurren")
 
-  htBorrowBalanceCurrent.balance = call.outputs.value0
+//   htBorrowBalanceCurrent.balance = call.outputs.value0
 
-  htBorrowBalanceCurrent.save()
-}
+//   htBorrowBalanceCurrent.save()
+// }

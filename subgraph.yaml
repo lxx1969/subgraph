@@ -87,11 +87,11 @@ dataSources:
           handler: handleRepayBorrow
         - event: Redeem(address,uint256,uint256)
           handler: handleRedeem     
-      callHandlers:
-        - function: balanceOfUnderlying(address)
-          handler: handleBalanceOfUnderlying   
-        - function: borrowBalanceCurrent(address)
-          handler: handleBorrowBalanceCurrent
+      # callHandlers:
+      #   - function: balanceOfUnderlying(address)
+      #     handler: handleBalanceOfUnderlying   
+      #   - function: borrowBalanceCurrent(address)
+      #     handler: handleBorrowBalanceCurrent
         # - function: supplyRatePerBlock()
         #   handler: handleSupplyRatePerBlock
         # - function: borrowRatePerBlock()
