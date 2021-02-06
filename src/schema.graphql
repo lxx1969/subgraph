@@ -67,7 +67,7 @@ type HtRepayBorrowImpl @entity{
 type HtRedeemImpl @entity{
   id: ID!
   
-  redeemer: address
+  redeemer: Bytes
   redeemAmount: BigInt
   redeemTokens: BigInt
 }
