@@ -43,15 +43,6 @@ type HtMintImpl @entity{
   
 }
 
-type HtRepayBorrowImpl @entity{
-  id: ID!
-  
-  totalMint: BigInt
-  minter: Bytes
-  mintAmount: BigInt
-  
-}
-
 
 type HtRepayBorrowImpl @entity{
   id: ID!
@@ -67,7 +58,7 @@ type HtRepayBorrowImpl @entity{
 type HtRedeemImpl @entity{
   id: ID!
   
-  redeemer: address
+  redeemer: Bytes
   redeemAmount: BigInt
   redeemTokens: BigInt
 }
@@ -77,6 +68,7 @@ id: ID!
 
 underlying: BigInt
 }
+
 type HtBorrowBalanceCurrent @entity{
 id: ID!
 
