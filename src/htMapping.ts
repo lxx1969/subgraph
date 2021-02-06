@@ -82,7 +82,7 @@ export function handleBalanceOfUnderlying(call: BalanceOfUnderlyingCall):void{
 export function handleBorrowBalanceCurrent(call: BorrowBalanceCurrentCall):void{
   let htBorrowBalanceCurrent = new HtBorrowBalanceCurrent("HtBorrowBalanceCurren")
 
-  htBorrowBalanceCurrent = call.outputs.value0
+  htBorrowBalanceCurrent.balance = call.outputs.value0
 
   htBorrowBalanceCurrent.save()
 }
